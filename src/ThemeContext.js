@@ -19,10 +19,4 @@ export const ThemeProvider = ({ children }) => {
 };
 
 // 3. useTheme hook returns theme and toggleTheme
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  return context; // { theme, toggleTheme }
-};
+export const useTheme = () => useContext(ThemeContext);
